@@ -1,0 +1,16 @@
+[installer]
+name="Genesys Unix Installation Package Installer"
+version=8.1.300.00
+platform=i686-linux-rhe5
+[Perl]
+name="Perl Interpreter"
+manufacturer=www.perl.com
+version=5.6.1
+[cfgutility]
+name="Configuration Utility"
+manufacturer="Genesys Telecommunications Laboratories, Inc."
+version=8.1.300.00
+[install_common.pm]
+name="Install Script Common Part"
+manufacturer="Genesys Telecommunications Laboratories, Inc."
+version=8.1.300.00

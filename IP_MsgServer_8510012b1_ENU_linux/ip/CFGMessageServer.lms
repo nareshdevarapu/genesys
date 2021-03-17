@@ -1,0 +1,146 @@
+ff8a57ad|LMS|1.0|CFGMessageServer.lms|7.0.000|*
+; ##############################################################
+; Copyright (c)1999-2003 Genesys Telecommunications Labs, Inc, 
+; All Rights Reserved
+;
+; Genesys Message Server Log Messages
+;
+; File: CFGMessageServer.lms
+; ##############################################################
+; The file contains all log messages for Genesys Message Server
+; range is >= 10000 
+; ##############################################################
+
+
+
+; ##############################################################
+; ERROR ( Standard ) [10001 .. 20000]
+; ##############################################################
+
+; CREATION & INITIALIZATION ------------------------------------
+
+10050|STANDARD|GCTI_MC_CI_REACTORQUEUEFAILED|TGSockReactor is unable to create socket reaction queue of size %d
+
+10051|STANDARD|GCTI_MC_CI_REACTORSTARTTFAILED|TGSockReactor is unable to start connection threads, error code %d
+
+10052|STANDARD|GCTI_MC_CI_CFGCONNMAINLOOPFAILED|Unable to create conn_main_loop thread for configuration server connection
+
+10053|STANDARD|GCTI_MC_CI_CFGREGISTERFAILED|Unable to registered for configuration server notifications 
+
+10054|STANDARD|GCTI_MC_CI_CFGGETAPPFAILED|Unable to get main application info from configuration server, filter: {name='%s',app_type=%d}
+
+; DATABASE -----------------------------------------------------
+
+11000|STANDARD|GCTI_MC_DB_CREATELMSQUEUE|Unable to create Requests queue for LMStorage (%d,'%s') result = %d
+
+11001|STANDARD|GCTI_MC_DB_UNPACKLM|CGLMDBWriter is unable to unpack attached Log Message (data follows)
+
+11050|STANDARD|GCTI_MC_DB_CLUSTER_CONNECTED|Connection with DB Cluster established (%s:%d)
+; Host of DBServer 
+; Port of DBServer 
+
+11051|STANDARD|GCTI_MC_DB_CLUSTER_DISCONNECTED|Connection with DB Cluster lost
+11052|STANDARD|GCTI_MC_DB_REQUEST_EXECUTION_FAIL|Insertion of log message into the log database failed.
+11053|STANDARD|GCTI_MC_DB_REQUEST_EXECUTION_SUCCESS|Insertion of log message succeed, recovered from previous failure.
+
+; NETWORK ------------------------------------------------------
+
+12000|STANDARD|GCTI_MC_NET_CREATESH|[TGSockAcceptor::accept] Unable to create TGSockServiceHandler for socket %d
+
+12001|STANDARD|GCTI_MC_NET_OPENSH|[TGSockAcceptor::accept] Unable to open TGSockServiceHandler for socket %d
+
+12002|STANDARD|GCTI_MC_NET_UNPACKIN|[CGMCClientProxy::handle_packet] Unable to unpack incoming packet from client %d, length %d
+
+12003|STANDARD|GCTI_MC_NET_CONFIRMFAILED|[CGMCClientProxy::handle_packet] Unable to confirm connection with client %d
+
+12004|STANDARD|GCTI_MC_NET_NLACCOPENFAILED|[CGMCNetListener::start] Unable to open an acceptor, error %d
+
+12005|STANDARD|GCTI_MC_NET_RCEXCEPTION|TGSockReactor: Exception on handle %d, dispatching
+
+12006|STANDARD|GCTI_MC_NET_WRONGREQTYPE|[sock_service_thread] Wrong request type %d in reaction queue
+
+12007|STANDARD|GCTI_MC_NET_PLACEPACKETINQUEUEFAILED|TGSockServiceHandler for client %d is unable to put outgoing packet ID=%d into output queue
+
+12008|STANDARD|GCTI_MC_NET_SRVHEXCEPTION|TGSockServiceHandler for client %d - Exception occurred, closing handler 
+
+
+; MESSAGES PROCESSING ------------------------------------------
+
+13000|STANDARD|GCTI_MC_MSGS_DDALLOCFAILED|Unable to allocate distribution descriptor, message ID %d, type %d, from %d
+
+13001|STANDARD|GCTI_MC_MSGS_DISTRIBUTEFAILED|Unable to distribute message ID %d, type %d, from %d
+
+13002|STANDARD|GCTI_MC_MSGS_MSGMISSEDINDISPATCHLIST|Message ID %d, type %d, from %d not found in the internal dispatch list
+
+13003|STANDARD|GCTI_MC_MSGS_UNABLETOSEND|Unable to send message ID %d, type %d, from %d to the client %d, error code %d
+
+13004|STANDARD|GCTI_MC_MSGS_DDINVALIDHANDLE|Invalid target handle %d specified to send message ID %d, type %d, from %d 
+
+; LCA STUFF ----------------------------------------------------
+
+14000|STANDARD|GCTI_MC_LCA_OPENFAILED|Unable to open LCA layer ( port = %d )
+
+  
+; ##############################################################
+; INFO ( Trace ) [20001 .. 30000]
+; ##############################################################
+
+; CREATION & INITIALIZATION ------------------------------------
+
+20050|TRACE|GCTI_MC_CI_SERVICEHANDLEROPENED|TGSockServiceHandler opened for handle %d in mode %s
+
+20051|TRACE|GCTI_MC_CI_SVCHLOOPSTARTED|TGSockServiceHandler handle events loop started for client %d
+
+20052|TRACE|GCTI_MC_CI_SVCHLOOPFINISHED|TGSockServiceHandler handle events loop finished for client %d
+
+20053|TRACE|GCTI_MC_CI_CFGCONNMAINLOOPCREATED|conn_main_loop thread for configuration server connection has been created
+
+20054|TRACE|GCTI_MC_CI_CFGREGISTERED|Registered for configuration server notifications 
+
+20055|TRACE|GCTI_MC_CI_CONFIGURATIONOBTAINED|Configuration obtained 
+
+; DATABASE -----------------------------------------------------
+
+21000|TRACE|GCTI_MC_DB_WAITING|Waiting for connection to the DBServer %s:%d
+
+
+; NETWORK ------------------------------------------------------
+
+22000|TRACE|GCTI_MC_NET_CLIENTCONNCONFIRMED|Connection with client %d confirmed
+
+
+; MESSAGES PROCESSING ------------------------------------------
+
+23000|TRACE|GCTI_MC_MSGS_NEWMESSAGE|Message ID=%d of type %d received from client %d
+
+23010|TRACE|GCTI_MC_MSGS_MESSAGE_DETAILS|Msg(id=%d,from=%d): t=%d, pr=%d, o=%d, key={f=%d,i=%d,l=%d,s=%s} 
+
+23001|TRACE|GCTI_MC_MSGS_CONSUMERSCOUNTED|Message ID %d, type %d, from %d should be sent to %d clients
+
+23002|TRACE|GCTI_MC_MSGS_SENT|Message ID %d, type %d, from %d sent to all clients with status %d
+
+23003|TRACE|GCTI_MC_MSMS_CLIENTSUBSCRIBEDALL|Client %d subscribed for all messages
+
+23004|TRACE|GCTI_MC_MSMS_CLIENTUNSUBSCRIBEDALL|Client %d unsubscribed from all messages
+
+23005|TRACE|GCTI_MC_MSMS_CLIENTSUBSCRIBEDTYPE|Client %d subscribed for all messages of type %d
+
+23006|TRACE|GCTI_MC_MSMS_CLIENTSUBSCRIBEDTYPEKEY|Client %d subscribed for all messages of type %d and key {%d,%d,%d,'%s'}
+
+
+; LCA STUFF ----------------------------------------------------
+
+24000|TRACE|GCTI_MC_LCA_CHANGERUNMODEREQ|Request to change runmode from LCA layer: new mode %d
+
+24001|TRACE|GCTI_MC_LCA_OPENED|LCA layer opened, handle=%d
+
+
+; ##############################################################
+; DEBUG [30001 .. 40000]
+; ##############################################################
+
+
+
+; ##############################################################
+; END
+; ##############################################################

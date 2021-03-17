@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InstallationPackage FormatVersion="8.0">
+  <Product License="NotRequired" AppClass="Server">
+    <Release Version="8.5.100.12" BuildDate="2017-01-10" BuildNumber="1" Type="General"/>
+    <Name>
+      <Long>Message Server</Long>
+      <Nickname>MsgServer</Nickname>
+    </Name>
+    <Language LocaleId="ENU">
+      <Name>English (United States)</Name>
+    </Language>
+    <Description>
+      Message Server provides centralized processing and storage
+      of all maintenance events that Genesys server applications
+      generate. Events are stored as log records in the Log
+      Database where they are available for further centralized
+      processing. Message Server also checks for log events
+      configured to trigger alarms. If a match is detected, the
+      alarm is sent to Solution Control Server for immediate
+      processing.
+    </Description>
+    <ReleaseNotes Place="Web" WebDBId="." FileName="release_notes.html"/>
+  </Product>
+  <Platforms OSGroupName="linux">
+    <Computer Type="Intel 32 bit">
+      <OS Name="Red Hat Enterprise Linux AS" Version="5" CfgOSType="16"/>
+      <OS Name="Red Hat Enterprise Linux AS" Version="6" CfgOSType="16"/>
+    </Computer>
+    <Computer Type="Intel EM64T">
+      <OS Name="Red Hat Enterprise Linux AS" Version="5" CfgOSType="16"/>
+      <OS Name="Red Hat Enterprise Linux AS" Version="6" CfgOSType="16"/>
+      <OS Name="Red Hat Enterprise Linux AS" Version="7" CfgOSType="16"/>
+    </Computer>
+  </Platforms>
+  <AppTemplates>
+    <Template Name="Message_Server_851"
+              FileName="Message_Server_851.apd"
+              CfgAppType="42"
+              AppMetadata="Message_Server_851.xml"/>
+  </AppTemplates>
+  <InstallationPgm>
+    <Release Version="0.0.000.00"/>
+    <Language LocaleId="ENU">
+      <Name>English (United States)</Name>
+    </Language>
+  </InstallationPgm>
+</InstallationPackage>
